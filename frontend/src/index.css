@@ -1,4 +1,45 @@
 * {
     box-sizing: border-box;
     overflow-x: hidden;
+    margin: 0;
+}
+
+:root {
+    
+}
+
+/* HOME PAGE CSS */
+
+.home {
+    background: #E4DDDE;
+    max-width: 1280px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.logo {
+    color: #63b86d;
+    text-shadow: -2px 2px 2px #2F5733;
+}
+
+.selections-list {
+    display: flex;
+    gap: 30px;
+    font-size: 1.2rem;
+    color: #6d5c48;
+}
+
+.selections-list li {
+    text-transform: capitalize;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #6d5c48;
 }

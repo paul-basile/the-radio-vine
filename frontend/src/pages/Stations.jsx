@@ -1,6 +1,7 @@
 
 import { fetchAllStations } from "../api/radioBrowser"
 import { useEffect, useState } from "react"
+import StationCard from "../components/StationCard";
 
 function Stations() {
 
@@ -27,9 +28,18 @@ function Stations() {
         
     }
 
+    /* if loading, show loading screen. if not loading, show station cards, which are mapped with a key for each station there is into a card component */
     return (
-        <div className="">
-            This is the stations page.
+        <div className="app">
+            {isLoading ? 
+            ( <div className="loading"><div className="spinner"></div><p>Loading station data...</p></div> ) 
+            : 
+            ( <div className="station-container">
+                {stationList.map((station, key) => (
+                    <StationCard station={station} key={key}/>
+                ))}
+            </div> )
+            }
         </div>
     )
 

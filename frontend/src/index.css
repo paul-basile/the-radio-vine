@@ -1,31 +1,55 @@
 * {
     box-sizing: border-box;
-    overflow-x: hidden;
     margin: 0;
 }
 
-:root {
-    
+@font-face {
+    font-family: 'EagleHorizon';
+    src: url('./assets/fonts/EagleHorizonP.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Transcity';
+    src: url('./assets/fonts/Transcity DEMO.otf') format('truetype');
 }
 
 /* HOME PAGE CSS */
 
+/* Navbar */
+
+:root {
+    background: #ffffff;
+    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(249, 255, 245, 1) 100%);
+    overflow-x: hidden;
+}
+
 .home {
-    background: #E4DDDE;
     max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .navbar {
+    background: #E4DDDE;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     width: 100%;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    margin-bottom: 0.7rem;
+    font-family: 'EagleHorizon';
 }
 
 .logo {
     color: #63b86d;
     text-shadow: -2px 2px 2px #2F5733;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 .selections-list {
@@ -35,11 +59,77 @@
     color: #6d5c48;
 }
 
-.selections-list li {
-    text-transform: capitalize;
-}
-
 a:link, a:visited, a:hover, a:active {
     text-decoration: none;
+    color: #6d5c48;
+}
+
+
+/* Home content */
+
+
+.main-content {
+    display: grid;
+    background: #eee6e7;
+    border-radius: 1rem;
+    padding: 20px;
+    font-family: 'Transcity';
+}
+
+.upper-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.site-heading {
+    font-size: 3.5rem;
+    color: #6d5c48;
+}
+.site-title {
+    color: #63b86d;
+    text-shadow: -2px 2px 2px #2F5733;
+}
+
+.site-description {
+    font-size: 1.8rem;
+    color: #968470;
+}
+
+.radio-image {
+    width: 30%;
+}
+
+.lower-content {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+}
+
+.about {
+    padding-top: 2rem;
+}
+
+.about p {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-style: italic;
+    color: #6d5c48;
+}
+
+.section-heading {
+    font-size: 3.5rem;
+    color: #6d5c48;
+    text-shadow: -2px 2px 2px #31281d;
+}
+
+.fun-facts {
+    padding-top: 2rem;
+}
+
+.fun-fact-list li {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-style: italic;
     color: #6d5c48;
 }

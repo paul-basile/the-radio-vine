@@ -176,8 +176,7 @@ a:link, a:visited, a:hover, a:active {
 
 .station-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 2fr));
 }
 
 .controls {
@@ -256,14 +255,82 @@ a:link, a:visited, a:hover, a:active {
     padding: 20px;
     margin: 8px;
     border-radius: 1rem;
-    background: #918f8f;
-    box-shadow: -5px 5px 3px 0px #7a7777;
+    background: #c0bebe;
+    box-shadow: -5px 5px 3px 0px #9e9b9b;
     font-family: 'Transcity'
 }
 
 .server-info {
     display: flex;
     flex-direction: column;
-    color: #2e2b28;
+    color: #4e4a46;
     font-size: 28px;
+}
+
+.light-animation {
+    padding-top: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.red-sq {
+    width: 6px;
+    height: 6px;
+    --box-color: red;
+    --box-color2: green;
+    box-shadow: -1px 1px 1px black;
+    animation: colorSwitch 1s alternate 2s infinite;
+}
+.green-sq {
+    width: 6px;
+    height: 6px;
+    --box-color: green;
+    --box-color2: red;
+    box-shadow: -1px 1px 1px black;
+    animation: colorSwitch 1s alternate 2s infinite;
+}
+.blue-sq {
+    width: 6px;
+    height: 6px;
+    --box-color: blue;
+    --box-color2: yellow;
+    box-shadow: -1px 1px 1px black;
+    animation: colorSwitch 1s alternate 2s infinite;
+}
+.yellow-sq {
+    width: 6px;
+    height: 6px;
+    --box-color: yellow;
+    --box-color2: blue;
+    box-shadow: -1px 1px 1px black;
+    animation: colorSwitch 1s alternate 2s infinite;
+}
+
+@keyframes colorSwitch {
+    from {
+        background: var(--box-color);
+    }
+    to {
+        background: var(--box-color2);
+    }
+}
+
+@property --box-color {
+    syntax: color;
+    inherits: false;
+    initial-value: default-value;
+}
+@property --box-color2 {
+    syntax: color;
+    inherits: false;
+    initial-value: default-value;
+}
+
+@media (max-width: 1000px) {
+    .radio-image {
+        width: 200px;
+    }
+    .upper-content {
+        gap: 7rem;
+    }
 }

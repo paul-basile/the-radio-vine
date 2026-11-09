@@ -231,7 +231,6 @@ a:link, a:visited, a:hover, a:active {
 .station-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     color: #6d5c48;
     font-size: 20px;
 }
@@ -245,6 +244,35 @@ a:link, a:visited, a:hover, a:active {
 .station-info .station-name {
     color: #63b86d;
     text-shadow: -1px 1px 1px #2F5733;
+}
+
+.station-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.line-design {
+    width: 90%;
+    height: 3px;
+    background: linear-gradient(90deg,rgba(109, 92, 72, 1) 0%, rgba(222, 210, 193, 1) 100%);
+}
+.favorite-button {
+    border: 1px solid #63b86d;
+    border-radius: 20px;
+    font-family: 'EagleHorizon';
+    font-size: 30px;
+    color: #63b86d;
+    text-shadow: 1px 1px 2px #2F5733;
+    background: #cedac1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-button:hover {
+    cursor: pointer;
 }
 
 

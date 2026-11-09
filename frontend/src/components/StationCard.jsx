@@ -1,6 +1,7 @@
 
 /* from api call, fills this component with data from the api, and is displayed on screen after loading */
 function StationCard({station}) {
+
     return ( 
     <div className="station-card">
         <div className="station-header">
@@ -16,6 +17,10 @@ function StationCard({station}) {
                 <div>
                     <img src={station.favicon} alt={station.name} />
                 </div>
+            </div>
+            <div className="station-footer">
+                <div className="line-design"></div>
+                <button type="button "className="favorite-button" onClick={() => favoriteStation(station.stationuuid)}>+</button>
             </div>
         </div>
     </div> 

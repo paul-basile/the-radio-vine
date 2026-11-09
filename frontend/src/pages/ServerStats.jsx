@@ -37,6 +37,7 @@ function ServerStats() {
                 <div>
                     <ul className="selections-list">
                         <li><a href="/stations">Stations</a></li>
+                        <li><a href="/favorites">Favorites</a></li>
                         <li><a href="/server">Server Stats</a></li>
                     </ul>
                 </div>

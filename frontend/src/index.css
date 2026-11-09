@@ -274,6 +274,17 @@ a:link, a:visited, a:hover, a:active {
 .favorite-button:hover {
     cursor: pointer;
 }
+.empty-message {
+    padding: 20px;
+    margin: 8px;
+    border-radius: 1rem;
+    background: #E4DDDE;
+    box-shadow: -5px 5px 3px 0px #ABA6A6;
+    font-family: 'Transcity';
+    color:#6d5c48;
+    font-size: 24px;
+    
+}
 
 
 /* SERVER CARD DESIGN */

@@ -1,6 +1,6 @@
 
 /* from api call, fills this component with data from the api, and is displayed on screen after loading */
-function StationCard({station}) {
+function StationCard({station, isFavorite, onToggleFavorite}) {
 
     return ( 
     <div className="station-card">
@@ -20,7 +20,9 @@ function StationCard({station}) {
             </div>
             <div className="station-footer">
                 <div className="line-design"></div>
-                <button type="button "className="favorite-button" onClick={() => favoriteStation(station.stationuuid)}>+</button>
+                <button type="button" className="favorite-button" onClick={() => onToggleFavorite(station)}>
+                    {isFavorite ? '-' : '+'}
+                </button>
             </div>
         </div>
     </div> 
@@ -28,3 +30,5 @@ function StationCard({station}) {
 }
 
 export default StationCard
+
+/*  onClick={() => favoriteStation(station.stationuuid)} */

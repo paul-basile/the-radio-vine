@@ -2,6 +2,7 @@
 import { fetchAllStations } from "../api/radioBrowser"
 import { useEffect, useState } from "react"
 import StationCard from "../components/StationCard";
+import useFavorites from "../hooks/useFavorites"
 
 function Stations() {
 
@@ -19,6 +20,8 @@ function Stations() {
 
     /* state for searching */
     const [searchQuery, setSearchQuery] = useState("");
+
+    const {toggleFavorite, isFavorite} = useFavorites();
 
     /* useEffect for only running ONCE in the website */
     useEffect(() => {
@@ -75,6 +78,7 @@ function Stations() {
                 <div>
                     <ul className="selections-list">
                         <li><a href="/stations">Stations</a></li>
+                        <li><a href="/favorites">Favorites</a></li>
                         <li><a href="/server">Server Stats</a></li>
                     </ul>
                 </div>
@@ -104,8 +108,12 @@ function Stations() {
             ( <div className="loading"><div className="spinner"></div><p>Loading station data...</p></div> ) 
             : 
             ( <div className="station-container">
-                {filteredList.map((station, key) => (
-                    <StationCard station={station} key={key}/>
+                {filteredList.map((station) => (
+                    <StationCard 
+                    station={station} 
+                    key={station.stationuuid}
+                    isFavorite={isFavorite(station.stationuuid)}
+                    onToggleFavorite={toggleFavorite}/>
                 ))}
             </div> )
             }

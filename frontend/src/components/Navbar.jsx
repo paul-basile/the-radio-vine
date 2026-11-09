@@ -7,6 +7,7 @@ function Navbar() {
             <div>
                 <ul className="selections-list">
                     <li className="selection"><a href="/stations">Stations</a></li>
+                    <li className="selection"><a href="/favorites">Favorites</a></li>
                     <li className="selection"><a href="/server">Server Stats</a></li>
                 </ul>
             </div>

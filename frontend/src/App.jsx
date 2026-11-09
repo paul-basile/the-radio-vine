@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from './pages/Home'
 import Stations from './pages/Stations'
+import FavoriteStations from './pages/FavoriteStations'
 import ServerStats from './pages/ServerStats'
 
 /* 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/stations" element={<Stations />}/>
+        <Route path="/favorites" element={<FavoriteStations />}/>
         <Route path="/server" element={<ServerStats />}/>
       </Routes>
     </BrowserRouter>

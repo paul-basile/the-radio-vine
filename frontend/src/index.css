@@ -42,11 +42,16 @@
     border-bottom-right-radius: 1.2rem;
     margin-bottom: 0.7rem;
     font-family: 'EagleHorizon';
+    box-shadow: -5px 5px 3px 0px #ABA6A6;
 }
 
 .logo {
     color: #63b86d;
     text-shadow: -2px 2px 2px #2F5733;
+}
+
+.logo h1 a {
+    color: #63b86d;
 }
 
 ul {
@@ -76,6 +81,7 @@ a:link, a:visited, a:hover, a:active {
     border-radius: 1rem;
     padding: 20px;
     font-family: 'Transcity';
+    box-shadow: -5px 5px 3px 0px #ABA6A6;
 }
 
 .upper-content {
@@ -145,6 +151,7 @@ a:link, a:visited, a:hover, a:active {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Transcity';
 }
 
 .spinner {
@@ -167,18 +174,76 @@ a:link, a:visited, a:hover, a:active {
 
 /* STATIONS PAGE */
 
+.station-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+.controls {
+    background: #eee6e7;
+    border-radius: 1rem;
+    padding: 10px;
+    font-family: 'Transcity';
+    box-shadow: -5px 5px 3px 0px #ABA6A6;
+    color: #6d5c48;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-group select {
+    margin: 5px;
+    background: #E4DDDE;
+    border: 1px solid #6d5c48;
+    border-radius: 6px 6px 0 0;
+    padding: 5px;
+    font-family: 'Transcity';
+    color: #6d5c48;
+    font-size: 20px;
+}
+
+.controls .search-section input {
+    margin: 5px;
+    background: #f7f0f1;
+    border: 1px solid #6d5c48;
+    border-radius: 6px;
+    padding: 5px;
+    font-family: 'Transcity';
+    color: #6d5c48;
+    font-size: 20px;
+}
+
 /* STATION CARD DESIGNS */
 
 .station-card {
     padding: 20px;
-    margin: 20px;
-    border: 2px solid #E4DDDE;
+    margin: 8px;
     border-radius: 1rem;
-    background: #F0EBE5
+    background: #E4DDDE;
+    box-shadow: -5px 5px 3px 0px #ABA6A6;
+}
+
+.station-card a {
+    color: #63b86d;
+}
+
+.station-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6d5c48;
+    font-size: 20px;
 }
 
 .station-info img {
-    width: 75px;
-    height: 75px;
-    border-radius: 10%
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}
+
+.station-info .station-name {
+    color: #63b86d;
+    text-shadow: -1px 1px 1px #2F5733;
 }

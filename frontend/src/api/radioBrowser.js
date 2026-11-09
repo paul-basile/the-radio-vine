@@ -14,3 +14,16 @@ export const fetchAllStations = async () => {
 
     return response.json();
 }
+
+
+export const fetchServerData = async () => {
+    const response = await fetch(
+        `${BASE_URL}/json/stats`
+    );
+
+    if (!response.ok) {
+        throw new Error("Failed to fetch server status.");
+    }
+
+    return response.json();
+}

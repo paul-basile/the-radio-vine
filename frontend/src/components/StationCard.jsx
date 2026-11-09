@@ -5,14 +5,16 @@ function StationCard({station}) {
     <div className="station-card">
         <div className="station-header">
             <div className="station-info">
-                <img src={station.favicon} alt={station.name} />
                 <div>
-                    <h3>{station.name}</h3>
-                    <p className="country">Country: {station.country} ({station.countrycode})</p>
-                    <p className="state">State: {station.state}</p>
-                    <p className="language">Language: {station.language}</p>
-                    <p className="votes">Votes: {station.votes}</p>
-                    <p className="clicks">Times Visited within the last 24 hours: {station.clickcount}</p>
+                    <h3 className="station-name"><a href={station.url_resolved} target="_blank">{station.name}</a></h3>
+                    <p className="votes"><b>Votes: </b>{station.votes}</p>
+                    <p className="country"><b>Country: </b>{station.country} ({station.countrycode})</p>
+                    <p className="state"><b>State: </b>{station.state}</p>
+                    <p className="language"><b>Language: </b>{station.language}</p>
+                    <p className="clicks"><b>Clicks </b>(24hrs): {station.clickcount}</p>
+                </div>
+                <div>
+                    <img src={station.favicon} alt={station.name} />
                 </div>
             </div>
         </div>

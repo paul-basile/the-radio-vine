@@ -16,7 +16,7 @@ export const fetchAllStations = async () => {
 }
 
 
-export const fetchServerData = async () => {
+export const fetchServerStats = async () => {
     const response = await fetch(
         `${BASE_URL}/json/stats`
     );

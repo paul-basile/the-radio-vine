@@ -18,7 +18,7 @@
 
 :root {
     background: #ffffff;
-    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(249, 255, 245, 1) 100%);
+    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgb(240, 247, 235) 100%);
     overflow-x: hidden;
     max-width: 1280px;
     width: 100%;
@@ -87,7 +87,7 @@ a:link, a:visited, a:hover, a:active {
 .upper-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20rem;
     font-size: 1.5rem;
 }
 
@@ -246,4 +246,24 @@ a:link, a:visited, a:hover, a:active {
 .station-info .station-name {
     color: #63b86d;
     text-shadow: -1px 1px 1px #2F5733;
+}
+
+
+/* SERVER CARD DESIGN */
+
+
+.server-card {
+    padding: 20px;
+    margin: 8px;
+    border-radius: 1rem;
+    background: #918f8f;
+    box-shadow: -5px 5px 3px 0px #7a7777;
+    font-family: 'Transcity'
+}
+
+.server-info {
+    display: flex;
+    flex-direction: column;
+    color: #2e2b28;
+    font-size: 28px;
 }

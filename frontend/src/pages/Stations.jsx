@@ -9,7 +9,7 @@ function Stations() {
     const [stationList, setStationList] = useState([]);
 
     /* to track if data is being loaded properly upon component creation */
-    const [isLoading, setIsLoading] = useState([true]);
+    const [isLoading, setIsLoading] = useState(true);
 
     /* same as stationList, but filtered */
     const [filteredList, setFilteredList] = useState([]);

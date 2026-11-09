@@ -1,4 +1,32 @@
+
+import { fetchServerStats } from "../api/radioBrowser"
+import { useEffect, useState } from "react"
+import ServerCard from "../components/ServerCard";
+
+
 function ServerStats() {
+
+    const [serverData, setServerData] = useState([null]);
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        fetchServerData();
+    }, []);
+
+    /* calling fetchServerData function to use data */
+    const fetchServerData = async () => {
+
+        try {
+            const data = await fetchServerStats();
+            setServerData(data);
+        } catch (err) {
+            console.error("Error fetching server data: ", err);
+        } finally {
+            setIsLoading(false);
+        }
+        
+    }
 
     return (
         <div className="app">
@@ -14,15 +42,15 @@ function ServerStats() {
                 </div>
             </div>
 
+
             {isLoading ? 
-            ( <div className="loading"><div className="spinner"></div><p>Loading server status data...</p></div> ) 
+            ( <div className="loading"><div className="spinner"></div><p>Loading server data...</p></div> ) 
             : 
-            ( <div className="station-container">
-                {filteredList.map((station, key) => (
-                    <StationCard station={station} key={key}/>
-                ))}
+            ( <div className="server-container">
+                <ServerCard server={serverData}/>
             </div> )
             }
+
         </div>
     )
     

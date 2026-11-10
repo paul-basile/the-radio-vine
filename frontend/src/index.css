@@ -87,31 +87,39 @@ a:link, a:visited, a:hover, a:active {
 .upper-content {
     display: flex;
     align-items: center;
-    gap: 20rem;
+    gap: 16rem;
     font-size: 1.5rem;
 }
 
 .site-heading {
     font-size: 3.5rem;
     color: #6d5c48;
+    animation: fadeInPage 1.2s ease-in-out;
 }
+
 .site-title {
     color: #63b86d;
     text-shadow: -2px 2px 2px #2F5733;
+    animation: fadeInPage 1.6s ease-in-out;
 }
 
 .site-description {
     font-size: 1.8rem;
     color: #968470;
+    animation: fadeInPage 2s ease-in-out;
 }
 
 .radio-image {
     width: 300px;
+    margin-top: 24px;
+    transition: transform 0.3s ease;
+    animation: fadeUpPage 2s ease-in-out
 }
 
 .lower-content {
     font-size: 1.5rem;
     padding-top: 2rem;
+    animation: fadeInPage 1.6s ease-in-out
 }
 
 .about {
@@ -140,6 +148,30 @@ a:link, a:visited, a:hover, a:active {
     font-size: 2rem;
     font-style: italic;
     color: #6d5c48;
+}
+
+.radio-image:hover {
+    transform: rotate(5deg);
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUpPage {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -183,6 +215,7 @@ a:link, a:visited, a:hover, a:active {
     background: #eee6e7;
     border-radius: 1rem;
     padding: 10px;
+    margin: 8px;
     font-family: 'Transcity';
     box-shadow: -5px 5px 3px 0px #ABA6A6;
     color: #6d5c48;
@@ -222,6 +255,7 @@ a:link, a:visited, a:hover, a:active {
     border-radius: 1rem;
     background: #E4DDDE;
     box-shadow: -5px 5px 3px 0px #ABA6A6;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .station-card a {
@@ -273,6 +307,7 @@ a:link, a:visited, a:hover, a:active {
 
 .favorite-button:hover {
     cursor: pointer;
+    color:#86e090;
 }
 .empty-message {
     padding: 20px;
@@ -284,6 +319,10 @@ a:link, a:visited, a:hover, a:active {
     color:#6d5c48;
     font-size: 24px;
     
+}
+
+.station-card:hover {
+    transform: scale(1.007);
 }
 
 
@@ -365,11 +404,78 @@ a:link, a:visited, a:hover, a:active {
     initial-value: default-value;
 }
 
+
+
+@media (max-width: 1300px) {
+    :root {
+        max-width: 1200px;
+    }
+}
+
 @media (max-width: 1000px) {
+    :root {
+        max-width: 900px;
+    }
     .radio-image {
         width: 200px;
+        margin-right: 50px;
     }
     .upper-content {
         gap: 7rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .upper-content {
+        align-items: center;
+        flex-direction: column;
+    }
+    .radio-image {
+        margin-top: -60px;
+    }
+    .selections-list {
+        font-size: 1rem;
+        align-items: center;
+        gap: 1rem;
+    }
+    .logo {
+        font-size: 0.6rem;
+    }
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    .station-card {
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 80%;
+    }
+    .station-info {
+        font-size: 12px;
+    }
+    .station-footer {
+        font-size: 12px;
+        align-items: center;
+    }
+    .favorite-button {
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+    }
+    .station-container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .station-info img {
+        width: 60px;
+        height: 60px;
     }
 }

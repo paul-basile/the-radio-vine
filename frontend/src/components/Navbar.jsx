@@ -1,14 +1,17 @@
+
+import { Link } from "react-router"
+
 function Navbar() {
     return (
         <div className="navbar">
             <div className="logo">
-                <h1><a href="/">The Radio Vine</a></h1>
+                <h1><Link to="/">The Radio Vine</Link></h1>
             </div>
             <div>
                 <ul className="selections-list">
-                    <li className="selection"><a href="/stations">Stations</a></li>
-                    <li className="selection"><a href="/favorites">Favorites</a></li>
-                    <li className="selection"><a href="/server">Server Stats</a></li>
+                    <li className="selection"><Link to="/stations">Stations</Link></li>
+                    <li className="selection"><Link to="/favorites">Favorites</Link></li>
+                    <li className="selection"><Link to="/server">Server Stats</Link></li>
                 </ul>
             </div>
         </div>

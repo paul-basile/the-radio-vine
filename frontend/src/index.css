@@ -33,6 +33,7 @@
 
 .navbar {
     background: #E4DDDE;
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,6 +44,9 @@
     margin-bottom: 0.7rem;
     font-family: 'EagleHorizon';
     box-shadow: -5px 5px 3px 0px #ABA6A6;
+    top: 0;
+    align-self: start;
+    z-index: 3;
 }
 
 .logo {
@@ -223,6 +227,10 @@ a:link, a:visited, a:hover, a:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 83px;
+    align-self: start;
+    z-index: 2;
 }
 
 .filter-group select {
@@ -256,6 +264,7 @@ a:link, a:visited, a:hover, a:active {
     background: #E4DDDE;
     box-shadow: -5px 5px 3px 0px #ABA6A6;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
+    z-index: 1;
 }
 
 .station-card a {

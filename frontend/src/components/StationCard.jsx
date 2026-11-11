@@ -15,7 +15,7 @@ function StationCard({station, isFavorite, onToggleFavorite}) {
                     <p className="clicks"><b>Clicks </b>(24hrs): {station.clickcount}</p>
                 </div>
                 <div>
-                    <img src={station.favicon} alt={station.name} />
+                    <img src={station.favicon} alt={station.name}/>
                 </div>
             </div>
             <div className="station-footer">

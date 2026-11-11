@@ -3,7 +3,7 @@ import { fetchAllStations } from "../api/radioBrowser"
 import { useEffect, useState } from "react"
 import StationCard from "../components/StationCard";
 import useFavorites from "../hooks/useFavorites"
-
+import { Link } from "react-router";
 function Stations() {
 
     /* stations to be held in a useState to be sure the data is existing, updating when new data is there */
@@ -16,7 +16,7 @@ function Stations() {
     const [filteredList, setFilteredList] = useState([]);
 
     /* controls sorting of stations based on selection */
-    const [sortBy, setSortBy] = useState("votes_asc");
+    const [sortBy, setSortBy] = useState("votes_desc");
 
     /* state for searching */
     const [searchQuery, setSearchQuery] = useState("");
@@ -54,13 +54,13 @@ function Stations() {
         let filtered = stationList.filter((station) => station.name.toLowerCase().includes(searchQuery.toLowerCase()));
         filtered.sort((a, b) => {
             switch (sortBy) {
-                case "votes_asc":
-                    return b.votes - a.votes
                 case "votes_desc":
+                    return b.votes - a.votes
+                case "votes_dasc":
                     return a.votes - b.votes;
-                case "clicks_asc":
-                    return b.clickcount - a.clickcount;
                 case "clicks_desc":
+                    return b.clickcount - a.clickcount;
+                case "clicks_asc":
                     return a.clickcount - b.clickcount;
             }
         })
@@ -73,13 +73,13 @@ function Stations() {
         <div className="app">
             <div className="navbar">
                 <div className="logo">
-                    <h1><a href="/">The Radio Vine</a></h1>
+                    <h1><Link to="/">The Radio Vine</Link></h1>
                 </div>
                 <div>
                     <ul className="selections-list">
-                        <li><a href="/stations">Stations</a></li>
-                        <li><a href="/favorites">Favorites</a></li>
-                        <li><a href="/server">Server Stats</a></li>
+                        <li><Link to="/stations">Stations</Link></li>
+                        <li><Link to="/favorites">Favorites</Link></li>
+                        <li><Link to="/server">Server Stats</Link></li>
                     </ul>
                 </div>
             </div>
@@ -88,10 +88,10 @@ function Stations() {
                 <div className="filter-group">
                     <label>Sort by:</label>
                     <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                        <option value="votes_asc">Ascending Votes</option>
                         <option value="votes_desc">Descending Votes</option>
-                        <option value="clicks_asc">Ascending 24hr Clicks</option>
+                        <option value="votes_asc">Ascending Votes</option>
                         <option value="clicks_desc">Descending 24hr Clicks</option>
+                        <option value="clicks_asc">Ascending 24hr Clicks</option>
                     </select>
                 </div>
                 <div className="search-section">

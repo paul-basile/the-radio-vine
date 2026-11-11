@@ -1,5 +1,6 @@
 import useFavorites from "../hooks/useFavorites";
 import StationCard from "../components/StationCard";
+import { Link } from "react-router";
 
 function FavoriteStations() {
     const { favorites, toggleFavorite } = useFavorites();
@@ -8,13 +9,13 @@ function FavoriteStations() {
         <div className="app">
             <div className="navbar">
                 <div className="logo">
-                    <h1><a href="/">The Radio Vine</a></h1>
+                    <h1><Link to="/">The Radio Vine</Link></h1>
                 </div>
                 <div>
                     <ul className="selections-list">
-                        <li><a href="/stations">Stations</a></li>
-                        <li><a href="/favorites">Favorites</a></li>
-                        <li><a href="/server">Server Stats</a></li>
+                        <li><Link to="/stations">Stations</Link></li>
+                        <li><Link to="/favorites">Favorites</Link></li>
+                        <li><Link to="/server">Server Stats</Link></li>
                     </ul>
                 </div>
             </div>

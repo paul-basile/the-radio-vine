@@ -1,6 +1,11 @@
-
+import { useState } from 'react'
+import fallBackIcon from '../assets/radio-icon.svg'
 /* from api call, fills this component with data from the api, and is displayed on screen after loading */
 function StationCard({station, isFavorite, onToggleFavorite}) {
+
+    //state for fallback image
+    const [imgFailed, setImgFailed] = useState(false);
+    const imgSrc = !station.favicon || imgFailed ? fallBackIcon : station.favicon;
 
     return ( 
     <div className="station-card">
@@ -15,7 +20,10 @@ function StationCard({station, isFavorite, onToggleFavorite}) {
                     <p className="clicks"><b>Clicks </b>(24hrs): {station.clickcount}</p>
                 </div>
                 <div>
-                    <img src={station.favicon} alt={station.name}/>
+                    <img src={imgSrc}
+                    alt={station.name}
+                    onError={() => setImgFailed(true)}
+                    />
                 </div>
             </div>
             <div className="station-footer">

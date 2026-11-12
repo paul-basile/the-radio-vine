@@ -2,7 +2,7 @@
 import { fetchServerStats } from "../api/radioBrowser"
 import { useEffect, useState } from "react"
 import ServerCard from "../components/ServerCard";
-import { Link } from "react-router";
+import Navbar from '../components/Navbar'
 
 
 function ServerStats() {
@@ -31,19 +31,7 @@ function ServerStats() {
 
     return (
         <div className="app">
-            <div className="navbar">
-                <div className="logo">
-                    <h1><Link to="/">The Radio Vine</Link></h1>
-                </div>
-                <div>
-                    <ul className="selections-list">
-                        <li><Link to="/stations">Stations</Link></li>
-                        <li><Link to="/favorites">Favorites</Link></li>
-                        <li><Link to="/server">Server Stats</Link></li>
-                    </ul>
-                </div>
-            </div>
-
+            <Navbar />
 
             {isLoading ? 
             ( <div className="loading"><div className="spinner"></div><p>Loading server data...</p></div> ) 

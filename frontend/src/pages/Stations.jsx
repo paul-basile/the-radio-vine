@@ -3,7 +3,7 @@ import { fetchAllStations } from "../api/radioBrowser"
 import { useEffect, useState } from "react"
 import StationCard from "../components/StationCard";
 import useFavorites from "../hooks/useFavorites"
-import { Link } from "react-router";
+import Navbar from '../components/Navbar'
 function Stations() {
 
     /* stations to be held in a useState to be sure the data is existing, updating when new data is there */
@@ -71,18 +71,7 @@ function Stations() {
     /* if loading, show loading screen. if not loading, show station cards, which are mapped with a key for each station there is into a card component */
     return (
         <div className="app">
-            <div className="navbar">
-                <div className="logo">
-                    <h1><Link to="/">The Radio Vine</Link></h1>
-                </div>
-                <div>
-                    <ul className="selections-list">
-                        <li><Link to="/stations">Stations</Link></li>
-                        <li><Link to="/favorites">Favorites</Link></li>
-                        <li><Link to="/server">Server Stats</Link></li>
-                    </ul>
-                </div>
-            </div>
+            <Navbar />
 
             <div className="controls">
                 <div className="filter-group">
@@ -108,7 +97,11 @@ function Stations() {
             ( <div className="loading"><div className="spinner"></div><p>Loading station data...</p></div> ) 
             : 
             ( <div className="station-container">
-                {filteredList.map((station) => (
+                {filteredList.length === 0 ?
+                    <p className="empty-message">
+                        No stations available, trying adjusting your filters
+                    </p> :
+                filteredList.map((station) => (
                     <StationCard 
                     station={station} 
                     key={station.stationuuid}

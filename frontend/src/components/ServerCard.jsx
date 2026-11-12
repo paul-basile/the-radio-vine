@@ -10,8 +10,8 @@ function ServerCard ({server}) {
                 <p className="station-count">Total Available Radio Stations: {server.stations}</p>
                 <p className="languages">Supported Languages: {server.languages}</p>
                 <p className="countries">Supported Countries: {server.countries}</p>
-                <p className="clicks-last-hour">Radio stations clicked in the last hour: {server.clicks_last_hour}</p>
-                <p className="clicks-last-hour">Radio stations clicked in the last day: {server.clicks_last_day}</p>
+                <p className="clicks-last-hour">Station Clicks (1hr): {server.clicks_last_hour}</p>
+                <p className="clicks-last-hour">Station Clicks (24hr): {server.clicks_last_day}</p>
                 <br></br>
                 <p className="supported-version">Supported Version: {server.supported_version}</p>
                 <p className="software-version">Software Version: {server.software_version}</p>
